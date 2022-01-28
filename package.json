@@ -1,7 +1,7 @@
 {
-  "name": "noveliabackend",
+  "name": "kuebikobackend",
   "version": "1.0.0",
-  "description": "Backend API of Novelia App",
+  "description": "Backend API of Kuebiko App",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
