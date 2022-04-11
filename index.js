@@ -302,7 +302,7 @@ app.get("/allbooks", (req, res) => {
       console.log(err);
       res.json({
         success: false,
-        message: "There was some error. Error: ",
+        message: "There was some error. Errorz: ",
         err,
       });
     } else {
