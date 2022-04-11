@@ -223,7 +223,7 @@ app.post("/register", (req, res) => {
         console.log(err);
         res.json({
           success: false,
-          message: "Your account could not be saved. Error: ",
+          message: "Your account could not be saved. Error: sad ",
           err,
         });
       } else {
