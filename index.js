@@ -111,6 +111,12 @@ const Genre = mongoose.model("Genre", GenreSchema);
 const BookInfo = mongoose.model("BookInfo", BookInfoSchema);
 const Book = mongoose.model("Book", BookSchema);
 
+//inserting random book
+
+const harry=new BookInfo({Name:"Game of Thrones"});
+harry.save();
+
+
 passport.serializeUser(function (user, done) {
   done(null, user);
 });
@@ -296,7 +302,7 @@ app.get("/allbooks", (req, res) => {
       console.log(err);
       res.json({
         success: false,
-        message: "There was some error. Error: ",
+        message: "There was some error. zError: ",
         err,
       });
     } else {
