@@ -10,7 +10,7 @@ import passport from "passport";
 import passportLocalMongoose from "passport-local-mongoose";
 
 const data = "Working Properly!";
-// Express Initiation
+// Express Initiationa
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -101,6 +101,8 @@ const BookSchema = new Schema({
   InBook: [{ Chapter: String, Content: String }],
 });
 
+
+
 // Mongoose models
 const UserCon = mongoose.model("UserCon", UserConSchema);
 const User = mongoose.model("User", UserSchema);
@@ -110,6 +112,9 @@ const Admin = mongoose.model("Admin", AdminSchema);
 const Genre = mongoose.model("Genre", GenreSchema);
 const BookInfo = mongoose.model("BookInfo", BookInfoSchema);
 const Book = mongoose.model("Book", BookSchema);
+
+//data BookInfo
+
 
 passport.serializeUser(function (user, done) {
   done(null, user);
