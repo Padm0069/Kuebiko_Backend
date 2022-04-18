@@ -104,14 +104,20 @@ const BookSchema = new Schema({
 
 
 // Mongoose models
-const UserCon = mongoose.model("UserCon", UserConSchema);
+const UserCon = mongoose.model("UserCon", UserConSchema); //User Information database
 const User = mongoose.model("User", UserSchema);
 const BookFeedback = mongoose.model("BookFeedback", BookFeedbackSchema);
 const Language = mongoose.model("Language", LanguageSchema);
 const Admin = mongoose.model("Admin", AdminSchema);
 const Genre = mongoose.model("Genre", GenreSchema);
-const BookInfo = mongoose.model("BookInfo", BookInfoSchema);
-const Book = mongoose.model("Book", BookSchema);
+const BookInfo = mongoose.model("BookInfo", BookInfoSchema); //Book info database
+const Book = mongoose.model("Book", BookSchema); //BOok content database
+
+//inserting Custom Book to Check
+
+const harry=new BookInfo({Name:"Game of Thrones"});
+harry.save();
+
 
 //data BookInfo
 
@@ -222,7 +228,7 @@ app.post("/register", (req, res) => {
         console.log(err);
         res.json({
           success: false,
-          message: "Your account could not be saved. Error: ",
+          message: "Your account could not be saved. Error: Try again",
           err,
         });
       } else {
@@ -255,7 +261,7 @@ app.post("/login", (req, res) => {
       });
     } else {
       passport.authenticate("local")(req, res, function () {
-        res.json({ success: true, message: "You are logged in!" });
+        res.json({ success: true, message: "You are logged in! Welcome" });
       });
     }
   });
@@ -289,7 +295,7 @@ app.post("/addChapter", (req, res) => {
           }
         });
       } else {
-        res.send("No book found");
+        res.send("No book found Search for a different Book");
       }
     }
   });
@@ -301,7 +307,7 @@ app.get("/allbooks", (req, res) => {
       console.log(err);
       res.json({
         success: false,
-        message: "There was some error. Error: ",
+        message: "There was some error. Error: Please try again ",
         err,
       });
     } else {
