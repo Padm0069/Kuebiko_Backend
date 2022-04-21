@@ -115,8 +115,6 @@ const Book = mongoose.model("Book", BookSchema); //BOok content database
 
 //inserting Custom Book to Check
 
-const harry=new BookInfo({Name:"Game of Thrones"});
-harry.save();
 
 
 //data BookInfo
